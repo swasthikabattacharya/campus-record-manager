@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary Page Title & Metadata -->
+    <title>Campus Record Manager</title>
+    <meta name="title" content="Campus Record Manager">
+    <meta name="description" content="Official Campus Record Manager platform (https://campusrecordmanager). Secure, high-performance academic and student directory powered by Hash Map and BST algorithms for instant record lookup and verified file management.">
+    <meta name="keywords" content="Campus Record Manager, Student Records, Academic Directory, Faculty Portal, Staff Directory, campusrecordmanager, DSA Record Management">
+    <meta name="author" content="Campus Record Manager - School of Engineering & Technology">
+    <link rel="canonical" href="https://campusrecordmanager">
+
+    <!-- Open Graph / Facebook / WhatsApp / LinkedIn / iMessage Rich Link Previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://campusrecordmanager">
+    <meta property="og:site_name" content="Campus Record Manager">
+    <meta property="og:title" content="Campus Record Manager">
+    <meta property="og:description" content="Official Campus Record Manager (https://campusrecordmanager) — Fast, verified academic and student directory with instant search and document management.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://campusrecordmanager/static/img/campus-preview.png">
+
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://campusrecordmanager">
+    <meta name="twitter:title" content="Campus Record Manager">
+    <meta name="twitter:description" content="Official Academic & Student Directory Portal (https://campusrecordmanager). Search, view, and manage records with instant retrieval.">
+    <meta name="twitter:image" content="https://campusrecordmanager/static/img/campus-preview.png">
+
+    <!-- Mobile App & Browser UI Styling -->
+    <meta name="theme-color" content="#0f172a">
+    <meta name="msapplication-TileColor" content="#0f172a">
+    <meta name="msapplication-navbutton-color" content="#0f172a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Campus Record Manager">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Official Campus Favicon (Academic Shield Emblem SVG Data URI) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5' stroke='%233b82f6' stroke-width='2' fill='%230f172a' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5' stroke='%233b82f6' stroke-width='2' fill='%230f172a' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <!-- Stylesheets & Web Fonts -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Navigation Header -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="brand-section">
+                <div class="brand-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <path d="M2 17l10 5 10-5"></path>
+                        <path d="M2 12l10 5 10-5"></path>
+                    </svg>
+                </div>
+                <div class="brand-text-group">
+                    <div class="brand-title-row">
+                        <h1 class="brand-title">Campus Record Manager</h1>
+                        <span class="official-badge">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            Official
+                        </span>
+                    </div>
+                    <p class="brand-subtitle">
+                        <span class="official-url">https://campusrecordmanager</span>
+                        <span class="brand-dot">&bull;</span>
+                        <span class="brand-subtext">Academic Directory</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Header Action Buttons -->
+            <div class="header-actions">
+                <button class="btn btn-secondary" id="btn-open-upload" title="Upload records in PDF, Excel, or CSV format">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <span>Upload Records</span>
+                </button>
+                <button class="btn btn-primary" id="btn-open-add" title="Add a new student, staff, or employee record">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    <span>+ Add Member</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-content">
+        <!-- Live DSA Stats Cards -->
+        <section class="stats-bar">
+            <div class="stat-card">
+                <span class="stat-label">Total Records</span>
+                <span class="stat-value" id="stat-total-students">--</span>
+                <span class="stat-hint" id="stat-records-breakdown">Active Campus Members</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Hash Map Index</span>
+                <span class="stat-value" id="stat-hashmap">O(1)</span>
+                <span class="stat-hint" id="stat-load-factor">Chaining &bull; Load Factor: --</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Binary Search Tree</span>
+                <span class="stat-value" id="stat-bst">O(log n)</span>
+                <span class="stat-hint" id="stat-bst-nodes">In-Order Sorted A-Z</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Attached Documents</span>
+                <span class="stat-value" id="stat-files-count">--</span>
+                <span class="stat-hint" id="stat-storage-size">Local Storage</span>
+            </div>
+        </section>
+
+        <!-- Search Bar Section -->
+        <section class="search-section">
+            <div class="search-box-wrapper">
+                <div class="search-input-group">
+                    <span class="search-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </span>
+                    <input type="text" id="search-input" class="search-input" 
+                           placeholder="Search by exact ID (Staff ID, Employee ID, Roll No) or type name for prefix search..." 
+                           autocomplete="off">
+                    <button class="clear-search-btn" id="clear-search-btn" title="Clear search" style="display: none;">
+                        &times;
+                    </button>
+                </div>
+            </div>
+            <div class="search-hint-bar">
+                <span>⚡ <strong>Exact ID match:</strong> Displays ONLY that member's complete details.</span>
+                <span>🌳 <strong>Name search:</strong> Filters prefix in BST.</span>
+                <span>📋 <strong>Empty search:</strong> Lists all members sorted alphabetically.</span>
+            </div>
+        </section>
+
+        <!-- Dynamic Results Container -->
+        <section id="content-area" class="content-area">
+            <!-- Dynamically populated with either Exact Details or Directory List -->
+        </section>
+    </main>
+
+    <!-- Modal: Add / Update Member Form -->
+    <div class="modal-overlay" id="add-modal" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>+ Add / Update Campus Record</h3>
+                <button class="modal-close" id="close-add-modal">&times;</button>
+            </div>
+            <form id="add-student-form" class="modal-body" enctype="multipart/form-data">
+                <div id="add-error-banner" class="alert alert-danger" style="display: none;"></div>
+
+                <div class="form-group">
+                    <label for="new-member-type">Record Category / Member Type <span class="required">*</span></label>
+                    <select id="new-member-type" name="type" class="form-control">
+                        <option value="Staff">Staff Member (Faculty / Teaching)</option>
+                        <option value="Employee">Employee (Staff / Non-Teaching / Technical / Admin)</option>
+                        <option value="Student">Student (Enrolled Student)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="new-student-id">Member ID / Roll Number <span class="required">*</span></label>
+                    <input type="text" id="new-student-id" name="id" class="form-control" placeholder="e.g. STF101, EMP204, or 25RBAID0002" required>
+                    <small class="form-text">ID is unique. If it already exists, its details will be updated.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="new-student-name">Full Name <span class="required">*</span></label>
+                    <input type="text" id="new-student-name" name="name" class="form-control" placeholder="e.g. Dr. Rajesh Kumar or John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="new-student-dept">Department / Division <span style="font-weight: 400; color: var(--text-muted);">(Optional)</span></label>
+                    <input type="text" id="new-student-dept" name="department" class="form-control" placeholder="e.g. Computer Science, Administration, IT Services" list="dept-suggestions">
+                    <datalist id="dept-suggestions">
+                        <option value="Computer Science & Engineering">
+                        <option value="Artificial Intelligence & Data Science">
+                        <option value="Electronics & Communication">
+                        <option value="Mechanical Engineering">
+                        <option value="Civil Engineering">
+                        <option value="Administration & HR">
+                        <option value="Finance & Accounts">
+                        <option value="IT Services & Systems">
+                    </datalist>
+                </div>
+
+                <div class="form-group">
+                    <label for="new-member-desig">Designation / Role <span style="font-weight: 400; color: var(--text-muted);">(Optional)</span></label>
+                    <input type="text" id="new-member-desig" name="designation" class="form-control" placeholder="e.g. Associate Professor, Software Engineer, Lab Assistant">
+                </div>
+
+                <div class="form-group">
+                    <label for="new-student-email">Email Address <span style="font-weight: 400; color: var(--text-muted);">(Optional)</span></label>
+                    <input type="email" id="new-student-email" name="email" class="form-control" placeholder="e.g. staff@campus.edu or emp@campus.edu">
+                </div>
+
+                <div class="form-group">
+                    <label for="new-member-phone">Phone / Contact Number <span style="font-weight: 400; color: var(--text-muted);">(Optional)</span></label>
+                    <input type="text" id="new-member-phone" name="phone" class="form-control" placeholder="e.g. 9876543210">
+                </div>
+
+                <div class="form-group">
+                    <label for="new-student-files">Optional File Attachments (Resume, ID Proof, Documents, Certificates)</label>
+                    <div class="file-drop-zone" id="add-dropzone">
+                        <input type="file" id="new-student-files" name="files" multiple class="file-input-hidden">
+                        <div class="drop-label">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                            <span>Choose files or drag & drop here</span>
+                        </div>
+                        <div id="add-selected-files-list" class="selected-files-preview"></div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancel-add-btn">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="save-student-btn">Save / Update Record</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Bulk Upload Records File -->
+    <div class="modal-overlay" id="upload-modal" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>Upload Records File (PDF, Excel, CSV)</h3>
+                <button class="modal-close" id="close-upload-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-desc" style="margin-bottom: 0.75rem; color: #334155;">
+                    Upload your records file (Student details, Staff list, or Employee records in <strong>PDF</strong>, <strong>Excel (.xlsx, .xls)</strong>, or <strong>CSV</strong>). 
+                    <strong>No strict headers required.</strong> Roll Number, Student ID, or Staff ID is enough to extract and display all personal details!
+                </p>
+
+                <div class="alert alert-warning" style="margin-bottom: 1rem; font-size: 0.85rem; padding: 0.65rem 0.85rem;">
+                    🗑️ <strong>Automatic replacement:</strong> When you upload a new records file, previous records are permanently deleted so only the newly uploaded file's records remain in the database.
+                </div>
+
+                <div class="file-drop-zone" id="bulk-dropzone" style="margin-bottom: 1rem;">
+                    <input type="file" id="bulk-file-input" class="file-input-hidden" accept=".pdf,.xlsx,.xls,.csv,.tsv,.txt">
+                    <div class="drop-label" id="bulk-drop-label">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="12" y1="18" x2="12" y2="12"></line>
+                            <line x1="9" y1="15" x2="12" y2="12"></line>
+                            <line x1="15" y1="15" x2="12" y2="12"></line>
+                        </svg>
+                        <span>Click to select PDF, Excel, or CSV or drag file here</span>
+                    </div>
+                    <div id="bulk-selected-file-name" class="selected-single-file"></div>
+                </div>
+
+                <div style="margin-bottom: 0.75rem;">
+                    <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer; color: #1e293b;">
+                        <input type="checkbox" id="bulk-replace-records" checked>
+                        <span><strong>Permanently delete previous records</strong> and replace with this file</span>
+                    </label>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0.5rem;">
+                    <label for="bulk-roll-no" style="font-size: 0.85rem; color: var(--text-muted);">
+                        Member ID <span style="font-weight: normal;">(Optional - only if uploading a single document without an ID in its filename)</span>
+                    </label>
+                    <input type="text" id="bulk-roll-no" class="form-control" placeholder="e.g. STF101 or EMP204">
+                </div>
+
+                <!-- Upload Summary Report (Visible after upload) -->
+                <div id="upload-summary-report" class="upload-summary-card" style="display: none;">
+                    <h4>Upload Results</h4>
+                    <div class="summary-badges">
+                        <div class="badge-item badge-success">
+                            <span class="badge-num" id="summary-added">0</span>
+                            <span class="badge-text">New Records</span>
+                        </div>
+                        <div class="badge-item badge-warning">
+                            <span class="badge-num" id="summary-updated">0</span>
+                            <span class="badge-text">Updated</span>
+                        </div>
+                        <div class="badge-item badge-danger">
+                            <span class="badge-num" id="summary-errors">0</span>
+                            <span class="badge-text">Errors</span>
+                        </div>
+                    </div>
+                    <div id="summary-details-box" class="summary-log-box" style="display: none;"></div>
+                </div>
+
+                <div style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
+                    <button type="button" class="btn btn-danger btn-sm" id="btn-wipe-all" style="width: 100%;">
+                        🗑️ Permanently Delete All Current Records Now
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancel-upload-btn">Close</button>
+                <button type="button" class="btn btn-primary" id="confirm-upload-btn">Upload & Save File</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Delete Confirmation -->
+    <div class="modal-overlay" id="delete-modal" style="display: none;">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-header">
+                <h3>Confirm Deletion</h3>
+                <button class="modal-close" id="close-delete-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to permanently delete this member record?</p>
+                <div class="delete-student-info">
+                    <strong id="delete-student-name">--</strong>
+                    <span id="delete-student-id" class="badge">--</span>
+                </div>
+                <div class="alert alert-warning" style="margin-top: 12px; margin-bottom: 0;">
+                    ⚠️ This will remove the member from the Hash Map, BST, and permanently delete all their attached files from disk.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancel-delete-btn">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirm-delete-btn">Yes, Delete Record</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                        <strong>Campus Record Manager</strong>
+                    </div>
+                    <p class="footer-tagline">Official Academic & Student Directory &bull; <span class="footer-url">https://campusrecordmanager</span></p>
+                </div>
+                <div class="footer-badges">
+                    <span class="tech-badge">Hash Map O(1)</span>
+                    <span class="tech-badge">BST O(log n)</span>
+                    <span class="tech-badge">SSL Verified</span>
+                    <span class="tech-badge">All Devices</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Campus Record Manager &bull; School of Engineering & Technology (SOET) &bull; Project Team: Swasthika, Saritha, Abdur, Srujana &bull; Mentor: Dr. R. Kiran Kumar</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="static/js/app.js"></script>
+</body>
+</html>
