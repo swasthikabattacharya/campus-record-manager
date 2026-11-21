@@ -3,7 +3,8 @@
 
 A lightweight, high-performance web application engineered for instant student directory search, profile management, and document storage using custom **Data Structures & Algorithms (DSA)**.
 
-Built for the **school/university**.
+Built for the**school/university**.
+
 Built by - Swasthika battacharya 
 - **Mentor:** Dr. R. Kiran Kumar
 
